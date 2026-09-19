@@ -363,3 +363,17 @@
   /* background-size: cover; */
   background-position: left;
 }
+
+/* globals.css ke end mien copy paste krdo */
+@media (min-width: 1024px) {
+  html,
+  body,
+  *,
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    cursor: none !important;
+  }
+}

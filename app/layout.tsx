@@ -5,6 +5,7 @@ import { Platypi } from "next/font/google";
 import Footer from "@/components/myui/Footer";
 import SmoothScroll from "@/smooth";
 import Fixmessage from "@/components/myui/Fixmessage";
+import Cursor from "../Cursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,6 +26,7 @@ export default function RootLayout({
           className={`${rockSalt.className} min-h-full flex flex-col overflow-x-hidden`}
         >
           <div className="">
+            <Cursor />
             <Header />
           </div>
           {children}

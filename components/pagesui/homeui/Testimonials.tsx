@@ -19,23 +19,23 @@ import { type CarouselApi } from "@/components/ui/carousel";
 const projects = [
   {
     name: "People Love Us",
-    des: "Our contact plumber Sierra  h-[550px] Vista AZ is designed to help homeowners and businesses quickly request plumbing assistance. You can reach out for emergency repairs,",
+    des: "Renovating an old resale flat felt daunting until we met this team. They provided Exceptional Value by suggesting cost-effective ways to achieve the luxury look we wanted without blowing our budget. Their eye for Timeless Design turned our dark, cramped kitchen into a bright, functional space that we know will stay stylish for years.",
     cus: "Mr tan",
   },
   {
     name: "People Love Us",
-    des: "Our contact plumber Sierra Vista AZ is designed to help homeowners and businesses quickly request plumbing assistance. You can reach out for emergency repairs,",
-    cus: "Mr tan",
+    des: "Our home renovation felt overwhelming until we met the Alpha team. They listened to how our family actually lives—not just how we wanted the house to look. During the hacking and tiling phases, we were constantly updated with photos and progress reports, which took away all the stress. It’s rare to find a firm that balances high-end design with such honest, down-to-earth project management. We finally feel like we have room to breathe.",
+    cus: "Sarah & David Lim",
   },
   {
     name: "People Love Us",
-    des: "Our contact plumber Sierra Vista AZ is designed to help homeowners and businesses quickly request plumbing assistance. You can reach out for emergency repairs,",
-    cus: "Mr tan",
+    des: "We engaged Alpha Design & Consultancy for BTO, and the experience was exceptional. We were worried about the hacking regulations and safety concerns. The team didn't just design a beautiful workspace; they handled the entire 'Consultancy' side with total transparency. They found space we didn't know we had and managed the electrical and plumbing works so precisely that we had zero downtime.",
+    cus: "Marcus Tan",
   },
   {
     name: "People Love Us",
-    des: "Our contact plumber Sierra Vista AZ is designed to help homeowners and businesses quickly request plumbing assistance. You can reach out for emergency repairs,",
-    cus: "Mr tan",
+    des: "We were worried about our BTO renovation timeline, but the team’s Timely Execution was impressive. They handled all the HDB permits seamlessly and handed over the keys a week earlier than expected. The final result looks exactly like the 3D renders—true Quality Craftsmanship that we are proud to show off to our friends and family!",
+    cus: "Jasmine & Wei Lun",
   },
 ];
 
