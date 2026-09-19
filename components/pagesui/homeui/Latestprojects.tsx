@@ -152,7 +152,7 @@ const Latestprojects = () => {
     },
   ];
   const autoplay = Autoplay({
-    delay: 3000,
+    delay: 303300,
 
     stopOnInteraction: false,
     stopOnMouseEnter: false,
@@ -166,7 +166,7 @@ const Latestprojects = () => {
   return (
     <>
       <TextMarquee />
-      <p className="text-black text-center font-bold text-[27px] -translate-y-30">
+      <p className="text-black text-center font-bold text-[27px] -translate-y-23">
         | OUR WORK |
       </p>
       <div className="w-full lg:flex justify-center items-center lg:py-10 lg:text-start lg:-mt-0  -mt-10 text-center">
@@ -180,7 +180,7 @@ const Latestprojects = () => {
           }} // Smooth 0.8 seconds ka transition time
           className="lg:w-[20%] w-full space-y-2"
         >
-          <p className="text-6xl font-semibold ">
+          <p className="text-4xl font-semibold ">
             Latest Projects
           </p>
           <p>
@@ -197,7 +197,7 @@ const Latestprojects = () => {
               loop: true,
             }}
             plugins={[autoplay]}
-            className="w-full min-w-0 overflow-visible ml-10"
+            className="w-full min-w-0 overflow-visible lg:ml-10 ml-3"
           >
             <CarouselContent className="h-[550px] overflow-visible pr-16 -ml-16 ">
               {duplicatedProjects.map(
@@ -206,7 +206,7 @@ const Latestprojects = () => {
                     key={index}
                     className="min-w-0 basis-full pl-16 min-[500px]:basis-[90%] md:basis-1/2 lg:basis-1/3 overflow-visible "
                   >
-                    <div className="group relative flex h-[700px] flex-col bg-white hover:bg-yellow-500 p-8 select-none overflow-visible border border-gray-300 transition-all duration-500 ease-in-out pt-23 ">
+                    <div className="group relative flex h-[700px] flex-col bg-white hover:bg-yellow-500 p-8 select-none overflow-visible border border-gray-300 transition-all duration-500 ease-in-out pt-23 items-center">
                       <div className="mb-6">
                         <h2 className="text-6xl font-normal leading-none text-yellow-500 group-hover:text-white transition-colors duration-300 ">
                           {project.num}
@@ -214,9 +214,9 @@ const Latestprojects = () => {
                         <p className="text-lg font-semibold tracking-wide uppercase text-yellow-500 group-hover:text-white transition-colors duration-300 mt-2">
                           SEP
                         </p>
-                        <div className="w-10 h-[2px] bg-yellow-500 mt-2 mb-1 group-hover:bg-white transition-colors duration-300"></div>
+                        <div className="w-10 h-[2px] bg-yellow-500 mt-2 mb-1 group-hover:bg-white transition-colors duration-300 text-center "></div>
                       </div>
-                      <p className="text-xl leading-relaxed max-w-[90%] text-black group-hover:text-white/90 transition-colors duration-300 ">
+                      <p className="text-xl leading-relaxed max-w-[100%] text-black group-hover:text-white/90 transition-colors duration-300 ">
                         {project.name}
                       </p>
                       <div className="absolute left-8 -right-10 top-[45%] h-[180px]  z-20">

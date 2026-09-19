@@ -4,12 +4,14 @@ import About from "@/components/pagesui/homeui/About";
 import Latestprojects from "@/components/pagesui/homeui/Latestprojects";
 import Testimonials from "@/components/pagesui/homeui/Testimonials";
 import Whychooseus from "@/components/pagesui/homeui/Whychooseus";
-import { Button } from "@/components/ui/button";
+import banner from "../public/banner.jpg";
 import {
   motion,
   type Variants,
 } from "framer-motion";
 import { MdSupportAgent } from "react-icons/md";
+import Image from "next/image";
+import { useState } from "react";
 
 const marqueeItems = [
   "ALPHA DESIGN",
@@ -110,18 +112,20 @@ const TextMarquee = () => {
 };
 
 export default function Home() {
+  const [videoLoaded, setVideoLoaded] =
+    useState(false);
   return (
     <div className="w-full overflow-x-hidden bg-white dark:bg-zinc-950">
-      {/* Hero Section Container */}
       <div className="xl:h-screen h-170 w-full relative overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 h-full w-full z-41">
+        <div className="absolute inset-0 h-full w-full z-0 overflow-hidden">
+          {/* 1. MAIN BACKGROUND VIDEO ELEMENT */}
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="h-full w-full object-cover"
+            onCanPlay={() => setVideoLoaded(true)} // Jaise hi video play ke liye ready hogi, state true ho jayegi
+            className="h-full w-full object-cover absolute inset-0 z-0"
           >
             <source
               src="/bannervideo2.mp4"
@@ -130,8 +134,24 @@ export default function Home() {
             Your browser does not support the
             video tag.
           </video>
-          {/* Overlay to ensure text readability */}
-          <div className="absolute inset-0 lg:bg-[linear-gradient(82deg,rgba(0,0,0,0.48)_9%,rgba(255,255,255,0)_50%)] bg-[linear-gradient(82deg,rgba(0,0,0,0.48)_9%,rgba(255,255,255,0)_90%)] z-0" />
+
+          {/* 2. FALLBACK IMAGE LAYER (Jab tak video load na ho tab tak poori screen par visible rahegi) */}
+          <div
+            className={`absolute inset-0 z-10 transition-opacity duration-700 ease-in-out ${
+              videoLoaded
+                ? "opacity-0 pointer-events-none"
+                : "opacity-100"
+            }`}
+          >
+            <Image
+              src={banner}
+              fill // Standard layouts bounds fit ke liye 'fill' class ideal hoti hai absolute container mein
+              className="object-cover"
+              alt="banner fallback skeleton loading surface"
+              priority // Priority true rakhi hai taaki browser sabse pehle image download kare bina delay ke
+            />
+          </div>
+          <div className="absolute inset-0 lg:bg-[linear-gradient(82deg,rgba(0,0,0,0.48)_9%,rgba(255,255,255,0)_50%)] bg-[linear-gradient(82deg,rgba(0,0,0,0.48)_9%,rgba(255,255,255,0)_90%)] z-20 pointer-events-none" />
         </div>
 
         {/* 🟢 LEFT SIDE: Responsive Heading & Content */}
@@ -143,7 +163,7 @@ export default function Home() {
 
           <AnimatedText
             text="Where Design Meets Perfection"
-            className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white leading-tighter lg:leading-tight"
+            className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-white leading-tight lg:leading-tight"
           />
 
           <AnimatedText
@@ -155,7 +175,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 3 }}
             className="flex items-center gap-3 text-white mt-12 md:justify-start justify-center w-full"
           >
             <MdSupportAgent className="text-6xl md:text-6xl lg:text-7xl text-yellow-500 flex-shrink-0" />
@@ -187,6 +207,7 @@ export default function Home() {
           }}
           viewport={{ once: false, amount: 0.1 }}
           transition={{
+            delay: 1,
             duration: 2.2,
             ease: "easeInOut",
             times: [0, 0.2, 0.4, 0.6, 0.8, 1],

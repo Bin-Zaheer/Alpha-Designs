@@ -179,7 +179,7 @@ const Testimonials = () => {
             </CarouselContent>
           </Carousel>
 
-          <div className="lg:hidden flex  justify-center items-center gap-5 -mt-15 ">
+          <div className="lg:hidden flex  justify-center items-center gap-5 mt-15 ">
             {Array.from({ length: count }).map(
               (_, index) => (
                 <button

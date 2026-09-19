@@ -24,8 +24,8 @@ const Whychooseus = () => {
         }}
         className="relative z-10 w-full space-y-2"
       >
-        <div className="py-5 px-20 space-y-4 lg:text-start text-center">
-          <p className="text-4xl font-semibold relative text-white z-10">
+        <div className="py-5 lg:px-20 px-5 space-y-4 lg:text-start text-center w-full">
+          <p className="text-4xl font-semibold relative text-white z-10 ">
             What We Do Best
           </p>
 

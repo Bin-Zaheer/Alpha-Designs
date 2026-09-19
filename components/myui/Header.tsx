@@ -10,6 +10,7 @@ import { FaQuestion } from "react-icons/fa6";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { Menu } from "lucide-react"; // Hamburger Icon for Mobile
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 // Shadcn Sheet Components (Make sure 'npx shadcn@latest add sheet' is installed)
 import {
@@ -233,12 +234,19 @@ const Header = () => {
 
       {/* Scroll Indicator Line */}
       {scrollY > 0 && (
-        <div
-          className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-1 bg-blue-500 transition-all duration-1000 ease-out`}
-          style={{
-            width: `${Math.max(0, scrollY - 200)}px`,
+        <motion.div
+          initial={{ width: "0%" }} // Shuru mein width zero hogi
+          animate={{
+            /* Center se shuru ho kar pehle full width (100%) tak jayegi, phir wapas simat kar 0% ho jayegi */
+            width: ["0%", "100%", "0%"],
           }}
-        ></div>
+          transition={{
+            duration: 3, // Pura cyclic process 3 seconds mein complete hoga (Aap change kar sakte hain)
+            ease: "easeInOut", // Smooth momentum velocity calculations
+            repeat: 0, // 🔴 STRICT: Sirf 0 rakha hai taaki animation ek baar chal kar ruk jaye
+          }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 bg-blue-500 origin-center"
+        />
       )}
     </header>
   );
